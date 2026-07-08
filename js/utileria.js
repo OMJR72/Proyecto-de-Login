@@ -4,6 +4,7 @@ export function validarCorreo(correo) {
     return expresion.test(correo);
 }
 
+
 //Solo letras
 export function soloLetras(texto) {
     const expresion = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
@@ -34,6 +35,7 @@ export function validarPassword(password) {
     const expresion = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._#\-+=])[A-Za-z\d@$!%*?&._#\-+=]{8,}$/;
     return expresion.test(password);
 }
+
 
 //Mayor, menor y promedio
 export function calcularMayorMenorPromedio(arreglo) {

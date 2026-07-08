@@ -1,12 +1,4 @@
-function validarCorreo(c) {
-    let correo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return correo.test(c);
-}
-
-function validarPassword(pd){
-    let password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#_-])[A-Za-z\d@$!%*?&.#_-]{8,}$/;
-    return password.test(pd);
-}
+import { validarCorreo, validarPassword } from "./utileria.js";
 
 function iniciarSesion(){
     let correo = document.getElementById("correo").value;
@@ -26,3 +18,6 @@ function iniciarSesion(){
         window.location.href = "index.html";
     }
 }
+document
+    .getElementById("btnLogin")
+    .addEventListener("click", iniciarSesion);

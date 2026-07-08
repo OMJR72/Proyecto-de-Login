@@ -58,3 +58,9 @@ export function validarTelefono(telefono) {
     const expresion = /^\d{10}$/;
     return expresion.test(telefono);
 }
+
+//Numero de control
+export function validarNumeroControl(numeroControl) {
+    const expresion = /^[0-9]{8}$/;
+    return expresion.test(numeroControl);
+}

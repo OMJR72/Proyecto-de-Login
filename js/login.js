@@ -13,6 +13,7 @@ function iniciarSesion(){
     }
 
     if(validarCorreo(correo)==true && validarPassword(password)==true){
+        localStorage.setItem("correo", correo);
         window.location.href = "index.html";
     }
 }

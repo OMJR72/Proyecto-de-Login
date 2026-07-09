@@ -9,7 +9,7 @@
     <title>index</title>
 </head>
 <body>
-    <!--El navbar-->
+    <!--Barra de navegacion, contiene un boton para el sidebar, un boton para regresar al home(pero esta vacio) y el boton con el correo del usuario que despliega el cerrar sesion-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid d-flex justify-content-between">
             <ul class="navbar-nav w-100 justify-content-evenly">
@@ -21,7 +21,7 @@
                     </button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#"></a>
                 </li>
                 <li>
                     <button class="btn btn-primary"
@@ -36,6 +36,8 @@
             </ul>
         </div>    
     </nav>
+
+    <!--Aqui empieza el sidebar-->
     <div class="offcanvas offcanvas-start" id="menu">
         <div class="offcanvas-header">
             <h5>Menu</h5>
@@ -46,22 +48,28 @@
         <div class="offcanvas-body">
             <div class="list-group">
 
+                <!--El boton de usuario que despliega-->
                 <button class="list-group-item list-group-item-action"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapse">
                     <span>Usuario</span>
                 </button>
-                <div class="collapse" id="collapse">
-                    <a href="#" id="btnCapturar" class="list-group-item">Capturar</a>
-                </div>
+                    <!--El boton desplegado del anterior boton-->
+                    <div class="collapse" id="collapse">
+                        <a href="#" id="btnCapturar" class="list-group-item">Capturar</a>
+                    </div>
+
+                <!--Un boton normal para desplegar la pagina de alumnos-->
                 <button id="btnAlumnos" class="list-group-item list-group-item-action">
                     Alumnos
                 </button>
+                <!--Otro boton-->
                 <a href="#" class="list-group-item">Calcular Edad</a>
             </div>
         </div>
     </div>
 
+    <!--Aqui termina la barra de navegacion y empieza la logica del sidebar-->
     <div id="vistaUsuario" class="container mt-5 d-none">
         <div class="row justify-content-center">
             <div class="col-lg-7">
@@ -70,6 +78,7 @@
                         <h2>Formulario</h2>
                     </div>
                     <div class="card-body">
+                        <!--Formulario xD-->
                         <form id="formulario">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre de Usuario</label>
@@ -109,7 +118,7 @@
             </div>
         </div>
     </div>
-
+    <!--Modal-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="toastExito" class="toast text-bg-success" role="alert">
             <div class="d-flex">
@@ -118,6 +127,8 @@
             </div>
         </div>
     </div>
+
+    <!--La pestaña de alumnos-->
     <div class="d-none" id="vistaAlumnos">
         <div class="container">
             <input type="text" id="control" placeholder="Ingrese el numero de control"></input>
@@ -145,6 +156,14 @@
                 </tbody>
             </table>
         </div>        
+    </div>
+
+    <div class="d-none" id="vistaEdad">
+        <form>
+            <label for="edad">Edad:</label>
+            <input type="date" id="edad" name="edad">
+            <button type="button" id="btnCalcularEdad">Calcular</button>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
